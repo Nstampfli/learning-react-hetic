@@ -32,6 +32,7 @@ export default function CartItem(props) {
 	const [quantity, setQuantity] = useState(1)
 	const { product } = props
 	const { price, name } = product
+	const total = price * quantity
 
 	function HandleMinus() {
 		if (quantity > 0) {
@@ -47,7 +48,7 @@ export default function CartItem(props) {
 			<h2>{name}</h2>
 			<p>Prix/u : {price}€</p>
 			<p>Quantité : {quantity}</p>
-			<p>Prix Total : {price * quantity}€</p>
+			<p>Prix Total : {total}€</p>
 			<ButtonContainer>
 				<button onClick={HandleMinus}>-</button>
 				<button onClick={HandlePlus}> +</button>
